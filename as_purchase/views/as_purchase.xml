@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="as_purchase_order_foas_nucl" model="ir.ui.view">
+            <field name="name">as.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="type">form</field>
+            <field name="priority" eval="5" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_order']" position="after">
+                    <field name="picking_type_id" domain="[('code','=','incoming')]" options="{'no_create': True}"
+                        groups="stock.group_stock_multi_locations" />
+                    <field name="payment_term_id" options="{'no_open': True, 'no_create': True}"
+                        attrs="{'readonly': ['|', ('invoice_status','=', 'invoiced'), ('state', '=', 'done')]}" />
+                </xpath>
+                <xpath expr="//page[@name='purchase_delivery_invoice']/group/group[2]/field[@name='payment_term_id']"
+                    position="attributes">
+                    <attribute name="attrs">{'invisible': True}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_qty']" position="after">
+                    <field name="as_stock_actual" groups="as_purchase.group_cantidad_actual_product"/>
+                </xpath>
+                 <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="before">
+                    <field name="as_procesar" groups="as_purchase.group_purchase_line_selected"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="as_purchase_order_replace_field" model="ir.ui.view">
+            <field name="name">as.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase_stock.purchase_order_view_form_inherit" />
+            <field name="type">form</field>
+            <field name="priority" eval="5" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='purchase_delivery_invoice']/group/group/field[@name='picking_type_id']"
+                    position="replace">
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
