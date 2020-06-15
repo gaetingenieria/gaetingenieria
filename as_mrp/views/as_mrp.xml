@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_mrp_foas_nucl" model="ir.ui.view">
+            <field name="name">stock.move.form.mrp</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="mrp.view_stock_move_raw_tree" />
+            <field name="type">form</field>
+            <field name="priority" eval="5" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_uom']" position="after">
+                    <field name="as_stock_actual" groups="as_mrp.group_stock_produccion"/>
+                </xpath>
+            </field>
+        </record>
+        <!-- <record id="as_mrp_foas_nucl" model="ir.ui.view">
+            <field name="name">mrp.production.form.mrp</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view" />
+            <field name="type">form</field>
+            <field name="priority" eval="5" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='move_raw_ids']/tree/field[@name='product_uom']" position="after">
+                    <field name="as_stock_actual" groups="as_mrp.group_stock_produccion"/>
+                </xpath>
+            </field>
+        </record> -->
+    </data>
+</odoo>

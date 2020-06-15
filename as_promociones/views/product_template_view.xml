@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.form.view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.product_template_form_view_procurement_button"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='general_information']" position="after">
+                <page name="as_price_provider" string="Lista de Precios de Proveedor">
+                    <field name="as_price_line" widget="one2many" >
+                        <tree string="Variants" editable="bottom">
+                            <field name="name" />
+                            <field name="as_precio_proveedor" />
+                            <field name="as_precio_nimax" />
+                            <field name="as_utilidad" />
+                            <field name="as_descuento" />
+                            <field name="as_precio_final" />
+                        </tree>
+                    </field>
+                        <p class="oe_grey oe_edit_only">
+                        <strong>Lista de Precios de Proveedor</strong>: Registrar la lista de precios en cada producto
+                    </p>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
