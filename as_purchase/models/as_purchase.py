@@ -11,7 +11,7 @@ class PurchaseOrder(models.Model):
     _inherit = 'purchase.order.line'
 
     as_stock_actual = fields.Float(string='Stock actual',readonly=True)
-    as_procesar = fields.Boolean(string='Comprar', default=False)
+    as_procesar = fields.Boolean(string='Comprar', default=True)
 
     def _create_stock_moves(self, picking):
         values = []

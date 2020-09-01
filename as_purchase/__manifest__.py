@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'AhoraSoft Modulo de Compra',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'category': 'purchase',
     'author': 'Ahorasoft',
     'summary': 'Customized purchase Management for Bolivia',
