@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_account_payment_tree" model="ir.ui.view">
+            <field name="name">account.payment.tree</field>
+            <field name="model">account.payment</field>
+            <field name="arch" type="xml">
+                <tree string="Desglose de pagos realizados">
+                    <field name="partner_id"/>
+                    <field name="as_iva_retenido"/>
+                    <field name="amount_total"/>
+                    <field name="amount"/>
+                    <field name="payment_date"/>
+                    <field name="state"/>
+                    <field name="as_invoice_number"/>
+                    <field name="invoice_date"/>
+                    <field name="payment_acquirer_id"/>
+                    <field name="as_lugar_retiro"/>
+                    <field name="as_retira"/>
+                    <field name="as_ciudad"/>
+                </tree>
+            </field>
+        </record>
+        
+        
+        <!-- Accion de la interfaz -->
+        <record id="as_metodo_pago_action" model="ir.actions.act_window">
+            <field name="name">Desgloses de pago</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_account_payment_tree"/>
+        </record>
+
+        <menuitem 
+        id="menu_desglose_general" 
+        name="Desglose de Pagos" 
+        action="as_metodo_pago_action" 
+        parent="account_reports.account_reports_partners_reports_menu" 
+        sequence="22" 
+        />
+    </data>
+</odoo>

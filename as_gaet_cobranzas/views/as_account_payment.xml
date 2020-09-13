@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payment_payments_inherit" model="ir.ui.view">
+        <field name="name">payment.account.form.inherit</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_invoice_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='journal_id']" position="after">
+                <field name="payment_acquirer_id" options="{'no_create': True, 'no_open': True}" />
+                <field name="as_lugar_retiro" />
+                <field name="as_retira" />
+                <field name="as_ciudad" />
+                <field name="as_iva_retenido" />
+            </xpath>
+        </field>
+    </record>
+   
+
+</odoo>

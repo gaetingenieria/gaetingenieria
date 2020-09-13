@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="as_medio_pago_tree_view">
+            <field name="name">as.medio.pago tree</field>
+            <field name="model">as.medio.pago</field>
+            
+            <field name="arch" type="xml">
+                <tree string="Medio de Pago" >
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="medio_pago_form_view">
+            <field name="name">ias.medio.pago Form</field>
+            <field name="model">as.medio.pago</field>
+            <field name="arch" type="xml">
+                <form string="Medio de Pago">
+                    <sheet>
+                        <group>
+                         <field name="name" />
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="as_medio_pagoes_action_window">
+            <field name="name">Medio de Pago</field>
+            <field name="res_model">as.medio.pago</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+        <menuitem name="Medio de Pago" id="menu_medio_pago_promo" action="as_medio_pagoes_action_window"
+                  parent="sale.product_menu_catalog"/>
+
+    </data>
+</odoo>

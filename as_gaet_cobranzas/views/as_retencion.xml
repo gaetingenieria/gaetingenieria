@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="as_retencion_tree_view">
+            <field name="name">as.retencion tree</field>
+            <field name="model">as.retencion</field>
+            
+            <field name="arch" type="xml">
+                <tree string="Retenciones" >
+                    <field name="name" />
+                    <field name="as_porcentaje" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="retencion_form_view">
+            <field name="name">ias.retencion Form</field>
+            <field name="model">as.retencion</field>
+            <field name="arch" type="xml">
+                <form string="Retenciones">
+                    <sheet>
+                        <group>
+                         <field name="name" />
+                    <field name="as_porcentaje" />
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="as_retenciones_action_window">
+            <field name="name">Retenciones</field>
+            <field name="res_model">as.retencion</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+        <menuitem name="Retenciones" id="menu_retencion_promo" action="as_retenciones_action_window"
+                  parent="sale.product_menu_catalog"/>
+
+    </data>
+</odoo>

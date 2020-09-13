@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <report id="report_cobranza_gaet" 
+        model="sale.order" 
+        string="Resumen Global de Obra" 
+        report_type="xlsx"
+        name="as_gaet_cobranzas.report_cobranza_gaet.xlsx" file="as_gaet_cobranzas.report_cobranza_gaet.xlsx"
+        attachment_use="False" menu="True" />
+
+        <report id="report_planilla_gaet" 
+        model="res.partner" 
+        string="Planilla General de obra" 
+        report_type="xlsx"
+        name="as_gaet_cobranzas.report_planilla_gaet.xlsx" 
+        file="as_gaet_cobranzas.report_planilla_gaet.xlsx"
+        attachment_use="False" 
+        menu="True" />
+
+
+</odoo>

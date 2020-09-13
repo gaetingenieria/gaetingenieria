@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+as_retencion,as_retencion.report,model_as_retencion,,1,1,1,1
+as_medio_pago,as_medio_pago.report,model_as_medio_pago,,1,1,1,1
+as_generate_order,as_generate_order.report,model_as_generate_order,,1,1,1,1
+as_planilla_general,as_planilla_general.report,model_as_planilla_general,,1,1,1,1
+as_payment_acquirer,as_payment_acquirer.report,model_as_payment_acquirer,,1,1,1,1
