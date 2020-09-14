@@ -8,6 +8,12 @@
             <xpath expr="//field[@name='currency_id']" position="after">
                 <field name="as_invoice_number" />
                 <field name="as_date_fiscal" />
+                <field name="as_retencion" />
+
+            </xpath>
+               <xpath expr="//field[@name='amount_untaxed']" position="after">
+                <field name="amount_retencion" />
+                <field name="amount_neto" />
 
             </xpath>
           

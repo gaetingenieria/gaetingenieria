@@ -14,7 +14,7 @@ class SaleOrder(models.Model):
     as_retencion = fields.Many2one('as.retencion', string='Retención')
     as_medio_pago = fields.Many2one('as.medio.pago', string='Medio de Pago ')
     as_date_fiscal = fields.Date(string='Fecha Factura Fiscal')
-    as_cont_invoice = fields.Integer(string='Contador de facturas')
+    as_cont_invoice = fields.Integer(string='Contador de facturas',copy=False)
     as_tipo_garantia = fields.Char(string='Tipo de Garantia')
     as_numeracion_interna = fields.Char('Numeracion Interna', help=u'Numeración interna de ventas confirmadas.', copy=False)
     as_type_retencion = fields.Selection(selection=[('before', 'Antes de Retencion'),('after', 'Despues de Retencion')], string='Calculo de IVA',default="before")
@@ -23,6 +23,7 @@ class SaleOrder(models.Model):
         invoice_vals = super(SaleOrder, self)._prepare_invoice()
         self.as_cont_invoice = self.as_cont_invoice + 1
         invoice_vals['as_cont_invoice'] = self.as_cont_invoice
+        invoice_vals['as_retencion'] = self.as_retencion
         return invoice_vals
 
     def action_confirm(self):
