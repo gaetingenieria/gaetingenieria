@@ -15,7 +15,7 @@ class asSaleOrderWizard(models.Model):
     _name = 'as.generate.order'
     _description = 'Aprobe sale Wizard'
 
-    as_sale = fields.Many2one('sale.order', 'Sale Order')
+    as_sale = fields.Many2one('sale.order', 'Venta')
 
     def export_xls(self):
         context = self._context

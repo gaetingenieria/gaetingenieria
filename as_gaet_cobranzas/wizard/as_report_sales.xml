@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <form string="Resumen global de obra ">
                 <group col="4">
-                    <field name="as_sale"/>
+                    <field name="as_sale" required="1"/>
                  
                     
                 </group>
