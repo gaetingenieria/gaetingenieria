@@ -8,9 +8,13 @@
                 <tree string="Desglose de pagos realizados">
                     <field name="partner_id"/>
                     <field name="as_iva_retenido"/>
-                    <field name="amount_total"/>
-                    <field name="amount"/>
                     <field name="payment_date"/>
+                    <field name="amount_untaxed"/>
+                    <field name="amount_retencion"/>
+                    <field name="amount_neto"/>
+                    <field name="amount_total"/>
+                    <field name="amount_impuesto"/>
+                    <field name="amount"/>
                     <field name="state"/>
                     <field name="as_invoice_number"/>
                     <field name="invoice_date"/>
