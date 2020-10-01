@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_report_sii_1887" model="ir.ui.view">
+            <field name="name">Planilla SII 1887</field>
+            <field name="model">as.sii.1887</field>
+            <field name="arch" type="xml">
+                <form string="Planilla SII 1887">
+                    <group col="2">
+                         <field name="employer_id" /> 
+                        <field name="payslip_run_id" options="{'no_create': True}"/>
+
+                    </group>
+                    <footer>
+                        <button name="export_xls" type="object" default_focus="1" string="Generar en Excel"
+                            context="{'xls_export':1}" icon="fa-print" class="oe_highlight" />
+
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="as_action_report_sii_1887" model="ir.actions.act_window">
+            <field name="name">Planilla SII 1887</field>
+            <field name="res_model">as.sii.1887</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_report_sii_1887" />
+            <field name="target">new</field>
+        </record>
+
+        <report 
+        id="as_hr_cl_report_sii_1887_report" 
+        model="hr.payslip.run" 
+        string="Planilla SII 1887"
+        report_type="xlsx" 
+        name="as_hr_cl.report_sii_1887.xlsx" 
+        file="as_hr_cl.report_sii_1887.xlsx"
+        attachment_use="False" 
+        menu="False" />
+
+        <menuitem id="as_report_sii_1887_report" name="Planilla SII 1887" action="as_action_report_sii_1887"
+            parent="menu_cl_hr_payroll_reports" sequence="58"/>
+    </data>
+</odoo>

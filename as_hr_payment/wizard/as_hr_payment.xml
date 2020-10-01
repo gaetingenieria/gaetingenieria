@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_hr_payment_wiz" model="ir.ui.view">
+            <field name="name">Asistente pago de Nomina</field>
+            <field name="model">as.hr.payments</field>
+            <field name="arch" type="xml">
+                <form string="Asistente pago de Nomina">
+                    <group col="4">
+                        <field name="payslip_run_id" options="{'no_create': True}"/>
+                        <field name="date" />
+                        <field name="payment_method_id" />
+                        <field name="bank_journal_id" />
+                        <field name="as_agrupar" />
+
+                    </group>
+                         <notebook>
+                        <page string="Con cuenta bancaria" >
+                            <field name="slip_bank_ids"/>
+                        </page>  
+                        <page string="Sin cuenta bancaria" >
+                            <field name="slip_ids"/>
+                        </page>
+                    </notebook>
+                    <footer>
+                        <button name="action_process_payments" type="object" string="Generar Pagos" icon="fa-print" class="oe_highlight" />
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+
+        <record id="as_action_as_hr_payment_wiz" model="ir.actions.act_window">
+            <field name="name">Asistente pago de Nomina</field>
+            <field name="res_model">as.hr.payments</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_hr_payment_wiz" />
+            <field name="target">new</field>
+        </record>        
+       	
+        <record id="as_payment_line" model="ir.ui.view">
+            <field name="name">linea d epago</field>
+            <field name="model">as.hr.payments.line</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="slip_ids"/>
+                    <field name="payment_method_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="as_linea_pago_form" model="ir.ui.view">
+            <field name="name">linea_pago</field>
+            <field name="model">as.hr.payments.line</field>
+            <field name="arch" type="xml">
+                <form>
+                   
+                    <sheet>
+                        <group>
+                    <field name="slip_ids"/>
+                    <field name="payment_method_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="as_linea_pago_action" model="ir.actions.act_window">
+            <field name="name">linea_pago</field>
+            <field name="res_model">as.hr.payments.line</field>
+            <field name="view_mode">tree,form</field>
+        </record> 
+    </data>
+</odoo>

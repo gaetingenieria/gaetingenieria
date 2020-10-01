@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="hr_employee_rules_form" model="ir.ui.view">
+			<field name="name">hr.employee.rules.form</field>
+			<field name="model">hr.employee.rules</field>
+			<field name="arch" type="xml">
+				<form string="employee_rules">
+                  <header>
+                      <button name="action_confirm" type="object" states="draft" string="Confirmar" class="oe_highlight" />
+                      <button name="action_cancel" type="object" states="active" string="Cancelar" class="oe_highlight" />
+                    <field name="state" widget="statusbar"/>
+                </header>
+					<sheet>
+						<div class="oe_title">
+							<label for="name" string="Nombre Regla" />
+							<h1>
+								<field name="name" />
+							</h1>
+						</div>
+						<group col="4">
+								<field name="type_employee"/>
+								<field name="employee_ids" widget="many2many_tags"/>
+								<field name="salary_rule_id" widget="many2many_tags"/>
+								<field name="type_distr" />
+								<field name="amount" />
+								<field name="qty" />
+								<field name="start_date" />
+								<field name="end_date" />
+								<field name="category_id" />
+								<field name="struct_ids" widget="many2many_tags"/>
+                                <field name="codigo" />
+                                <field name="employer_id" />
+						</group>
+                         <notebook name="lineas">
+                        <page string="Control de cobros">
+                
+                            <field name="line_ids" >
+                            <tree string="Payslips" >
+                                <field name="employee_id" />
+                                <field name="date_from" />
+                                <field name="date_to" />
+                                <field name="total" />
+                                <field name="slip_id" />
+                                <field name="run_id" />
+                                <field name="state" />
+
+                            </tree>
+                            </field>
+                       
+                        </page>
+						  <page string="Contador de Registros">
+                
+                            <field name="control_ids" >
+                            <tree string="rules_id" >
+                                <field name="employee_id" />
+                                <field name="qty" />
+                                <field name="qty_rule" />
+
+                            </tree>
+                            </field>
+                       
+                        </page>
+                    </notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<act_window id="hr_employee_rules_action" name="Reglas a empleados"
+			res_model="hr.employee.rules" view_mode="tree,form" />
+
+		<menuitem id="hr_employee_rules_menu" parent="hr_payroll.menu_hr_salary_configuration"
+			action="hr_employee_rules_action" sequence="14" />
+	</data>
+</odoo>

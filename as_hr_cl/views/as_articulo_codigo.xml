@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="as_hr_articulo" model="ir.ui.view">
+			<field name="name">as.hr.articulo.form</field>
+			<field name="model">as.hr.articulo</field>
+			<field name="arch" type="xml">
+				<form string="AFP">
+					<sheet>
+						<div class="oe_title">
+							<label for="name" string="ARTICULOS" />
+							<h1>
+								<field name="name" />
+								<field name="as_inciso" />
+								<field name="as_articulo" />
+								<field name="as_motivo" />
+							</h1>
+						</div>
+					
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<act_window id="hr_articulo_action" name="Articulos de Finiquito"
+			res_model="as.hr.articulo" view_mode="tree,form" />
+
+		<menuitem id="hr_articulo_menu" parent="menu_cl_hr_payroll_configuration"
+			action="hr_articulo_action" sequence="15" />
+	</data>
+</odoo>

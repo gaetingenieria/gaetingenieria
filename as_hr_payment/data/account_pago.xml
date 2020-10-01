@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>						
+    <data>      
+        <!-- Account Journal -->
+        <record id="payroll_journal" model="account.payment.method">
+            <field name="name">Tranferencia</field>
+            <field name="code">TRANS</field>
+            <field name="payment_type">outbound</field>
+        </record>
+        
+    </data>						
+</odoo>						

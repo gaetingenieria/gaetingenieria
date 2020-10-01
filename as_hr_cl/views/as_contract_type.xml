@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_contract_form_inherit" model="ir.ui.view">
+        <field name="name">hr.contract.type.form.inherit</field>
+        <field name="model">hr.contract.type</field>
+        <field name="inherit_id" ref="hr_contract_types.hr_contract_type_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="codigo" />
+                <field name="as_tipo" />
+                <field name="as_tipo_format" />
+             
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

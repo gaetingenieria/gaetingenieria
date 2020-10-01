@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="carta_finiquito">
+        <t t-call="web.html_container">
+
+            <div class="header">
+                <style type="text/css">
+                    .header {
+                        margin: 0px;
+                        padding: 0px;
+                    }
+
+                    .cabecera {
+                        font-size: 7px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .letra {
+                        font-size: 14px !important;
+                        margin: 0px;
+                    }
+
+                    .letra3 {
+                        font-size: 15px !important;
+                        margin: 0px;
+                        padding-left: 3px !important;
+                        padding-right: 3px !important;
+                    }
+
+                    .cabecera2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .columnasr {
+                        font-size: 12px;
+                        font-family: 'Arial' !important;
+                        margin-bottom: 10px;
+                    }
+
+                    .columnas2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    h3 {
+                        font-family: 'Arial' !important;
+                        font-size: 14px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    td {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    h4 {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    span {
+                        font-family: 'Arial' !important;
+
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    body {
+                        font-family: 'Arial' !important;
+                        font-size: 18px;
+                    }
+
+                    hr {
+                        border-bottom: solid;
+                        border-width: 1pt border-top:0px !important;
+                        padding: 0px !important;
+                        margin: 0px !important;
+
+                    }
+
+                    tr.border_bottom td {
+                        border-bottom: 0.5pt solid #cccccc;
+                        margin-right: 3px;
+                        padding-right: 3px;
+                        font-size: 13px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .borde1 {
+                        border-top: 1px solid grey;
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        border-bottom: 1px solid grey;
+                        margin-bottom: 3px;
+
+                    }
+
+                    .borde1 thead tr td {
+                        padding-left: 5px;
+                        padding-right: 5px;
+
+                    }
+
+                    .borde2 {
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        border-top: 1px solid grey;
+                        margin: 3px;
+                    }
+
+                    .titulo {
+                        font-size: 27px;
+                        padding-top: 40px;
+                        text-decoration-line: underline;
+                    }
+
+                    .titulo3 {
+                        font-size: 15px;
+                        padding-top: 40px;
+                        text-align: left;
+                    }
+
+                    .titulo2 {
+                        font-size: 25px;
+                        padding: 1px;
+                    }
+
+                    .letra0 {
+                        font-size: 11px;
+                    }
+
+                    .letra2 {
+                        font-size: 5px;
+                    }
+
+                    .letra5 {
+                        text-align: right;
+                        font-size: 5px;
+                    }
+
+
+                    .cuadro {
+                        border-left: 1px solid #000000 !important;
+                        padding-left: 4px !important;
+                        border-right: 1px solid #000000 !important;
+                        padding-right: 4px !important;
+                    }
+                </style>
+                <div class="col-12" style="text-align:center;" name='as_titulo'>
+                    <h2 class='titulo'>
+                        <div>
+
+                            <b>Finiquito de Contrato de Trabajo</b><br />
+                        </div>
+                    </h2>
+                    <br />
+
+
+                </div>
+
+                <table width="100%" class="table table-borderless borde1">
+
+                </table>
+            </div>
+            <t t-call="web.internal_layout">
+
+                <div class="page">
+                    <style type="text/css">
+                        .letra2 {
+                            border: 1px solid #000000;
+                            font-size: 9px;
+                        }
+
+                        .letra3 {
+                            border: 1px solid #000000;
+                            font-size: 9px;
+                            text-align: right;
+                        }
+
+                        .letra5 {
+                            font-size: 18px;
+                            text-align: center;
+                        }
+
+                        .parrafo {
+                            font-size: 18px;
+                            text-align: justify;
+                            line-height: 25px;
+                        }
+                    </style>
+                    <div class="col-12" style="text-align:left;font-size: 18px;" name='as_titulo'>
+                        <br />
+
+
+                        <div class="parrafo">
+                            <span t-esc="info['ciudad']" />, a
+                            <t t-esc="fecha_actual" />, entre Empresa <b><span t-esc="employer.name" /></b>,
+                            R.U.T <b>
+                                <t t-esc="employer.rut" /></b>, representado legalmente por don <b><span
+                                    t-esc="employer.representante_name" /></b>, cédula de identidad <b><span
+                                    t-esc="employer.representante_rut" /></b>, ambos con domicilio en <span
+                                t-esc="employer.address" />, comuna de  <span t-esc="employer.comuna" />, en adelante,
+                            también, « la empresa» o «el empleador», por una parte; y la otra <b>
+                                <t t-esc="employee.name" /></b>, RUT <b>
+                                <t t-esc="employee.identification_id" /></b>, en adelante, también, «el trabajador(a)»,
+                            se deja testimonio y se ha acordado el finiquito que consta de las siguientes cláusulas:
+                            <br />
+                            <br />
+                            <b>PRIMERO:</b> El trabajador prestó servicios a <b><span
+                                    t-esc="employer.name" /></b> desde el <span t-esc="fecha_inicial" /> hasta
+                            el <span t-esc="fechas" />, fecha esta última en que su contrato de trabajo ha terminado en
+                            virtud de la causal <span
+                                t-esc="articulo.as_motivo" />, causal señalada en el artículo <span t-esc="articulo.as_articulo" />, inciso <span
+                                t-esc="articulo.as_inciso" />, del Código del Trabajo.
+                            <br />
+                            <br />
+                            <b>Haberes:</b><br />
+                            <table width="100%" name="footer_table">
+                                <thead style='border:1px solid #FFFFFF;line-height : 25px;'>
+                                    <tr>
+                                        <td style="width:5%;text-align:center" class='letra5'>
+                                            Indemnizacion por Años de Servicio
+                                        </td>
+                                        <td style="width:5%;text-align:center" class='letra5'>
+                                            $<span t-esc="'{:,.2f}'.format(total_previo).replace(',', 'X').replace('.', ',').replace('X', '.')" /> <br />
+                                        </td>
+                                         </tr>
+                                    <tr>
+                                        <td style="width:5%;text-align:center" class='letra5'>
+                                            Indemnizacion Previo Aviso
+                                        </td>
+                                        <td style="width:5%;text-align:center" class='letra5'>
+                                            $<span t-esc="'{:,.2f}'.format(total_indem).replace(',', 'X').replace('.', ',').replace('X', '.')" /> <br />
+                                        </td>
+                                         </tr>
+                                    <tr>
+                                        <td style="width:5%;text-align:center" class='letra5'>
+                                            Indemnizacion Mutuo Acuerdo
+                                        </td>
+                                        <td style="width:5%;text-align:center" class='letra5'>
+                                            $<span t-esc="'{:,.2f}'.format(total_mutuo).replace(',', 'X').replace('.', ',').replace('X', '.')" /> <br />
+                                        </td>
+                                         </tr>
+                                    <tr>
+                                        <td style="width:5%;text-align:center" class='letra5'>
+                                            Vacaciones Proporcionales (<span t-esc="dias" /> días)
+                                         </td>
+                                        <td style="width:5%;text-align:center" class='letra5'>
+                                            $<span t-esc="'{:,.2f}'.format(total_vaca).replace(',', 'X').replace('.', ',').replace('X', '.')" /> <br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:5%;text-align:center" class='letra5'>
+                                            <b>Total Líquido a pagar</b><br />
+                                        </td>
+                                        <td style="width:5%;text-align:center" class='letra5'>
+
+                                            <b>$ <span t-esc="'{:,.2f}'.format(total).replace(',', 'X').replace('.', ',').replace('X', '.')" /></b>
+
+                                        </td>
+
+                                    </tr>
+
+                                </thead>
+                            </table>
+                            <br />
+                            <br />
+                            Sr(a) <b>
+                                <t t-esc="employee.name" /></b> declara haber analizado y estudiado detenidamente dicha
+                            liquidación, aceptándola en todas sus partes, sin tener observación alguna que formularle.
+
+                            <br />
+                            <br />
+                            <b>TERCERO:</b> En consecuencia, <b><span t-esc="employer.name" /></b> paga a Sr(a)
+                            <b>
+                                <t t-esc="employee.name" /></b> en efectivo la suma de $<span t-esc="'{:,.2f}'.format(total).replace(',', 'X').replace('.', ',').replace('X', '.')" />, (<span
+                                t-esc="total_es" />), que el trabajador declara recibir en este acto a su entera
+                            satisfacción. Las partes dejan constancia que la referida suma cubre el total de haberes
+                            especificados en la liquidación señalada en el numerando SEGUNDO del presente finiquito.
+                            <br />
+                            <br />
+                            <b>CUARTO:</b> Sr(a) <b>
+                                <t t-esc="employee.name" /></b> deja constancia que durante el tiempo que prestó
+                            servicios al empleador, recibió oportunamente el total de las remuneraciones, beneficios y
+                            demás prestaciones convenidas de acuerdo a su contrato de trabajo, clase de trabajo
+                            ejecutado y disposiciones legales pertinentes, y que en tal virtud el empleador nada le
+                            adeuda por tales conceptos, ni por horas extraordinarias, asignación familiar, feriado,
+                            indemnización por años de servicios, imposiciones previsionales, así como por ningún otro
+                            concepto, ya sea legal o contractual, derivado de la prestación de sus servicios, de su
+                            contrato de trabajo o de la terminación del mismo. En consecuencia, Sr(a) <b>
+                                <t t-esc="employee.name" /></b> declara que no tiene reclamo alguno que formular en
+                            contra de <b><span t-esc="employer.name" /></b>, renunciando a todas las acciones
+                            que pudieran emanar del contrato que los vinculó.
+
+                            <br />
+                            <br />
+                            <b>QUINTO:</b> En virtud de lo anteriormente expuesto, Sr(a) <b>
+                                <t t-esc="employee.name" /></b> manifiesta expresamente que <b><span
+                                    t-esc="employer.name" /></b> nada le adeuda en relación con los servicios
+                            prestados, con el contrato de trabajo o con motivo de la terminación del mismo, por lo que
+                            libre y espontáneamente, y con el pleno y cabal conocimiento de sus derechos, otorga a su
+                            empleador, el más amplio, completo, total y definitivo finiquito por los servicios prestados
+                            o la terminación de ellos, ya diga relación con remuneraciones, cotizaciones previsionales,
+                            de seguridad social o de salud, subsidios, beneficios contractuales adicionales a las
+                            remuneraciones, indemnizaciones, compensaciones, o con cualquiera causa o concepto.
+
+                            <br />
+                            <br />
+                            <b>SEXTO:</b> Asimismo, declara el trabajador que, en todo caso, y a todo evento, renuncia
+                            expresamente a cualquier derecho, acción o reclamo que eventualmente tuviere o pudiere
+                            corresponderle en contra del empleador, en relación directa o indirecta con su contrato de
+                            trabajo, con los servicios prestados, con la terminación del referido contrato o dichos
+                            servicios, sepa que esos derechos o acciones correspondan a remuneraciones, cotizaciones
+                            previsionales, de seguridad social o de salud, subsidios, beneficios contractuales
+                            adicionales a las remuneraciones, indemnizaciones compensaciones, o con cualquier otra causa
+                            o concepto.
+                            Para constancia, las partes firman el presente finiquito en tres ejemplares, quedando uno en
+                            poder de cada una de ellas, y en cumplimiento de la legislación vigente, Sr(a) <b>
+                                <t t-esc="employee.name" /></b> lo lee, firma y lo ratifica ante Ministro de Fé.
+                            <br />
+                            <br />
+                            <br />
+
+                        </div>
+                    </div>
+                    <table width="100%" name="footer_table">
+                        <thead style='border:1px solid #FFFFFF;line-height : 25px;'>
+                         <tr>
+                                <td style="width:25%;text-align:center" class='letra5'>
+                                    <t t-if="employer.icon_image">
+                                        <img t-att-src="image_data_uri(employer.icon_image)"
+                                            style="height: 85px; width: 150px;" />
+                                    </t>
+
+                                </td>
+                                <td style="width:25%;text-align:center" class='letra5'>
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td style="width:5%;text-align:center" class='letra5'>
+                                    <b> ________________________</b><br />
+                                    <b> <span t-esc="employer.name" /></b><br />
+                                    <b> RUT <span t-esc="employer.rut" /></b><br />
+                                    <b> EMPLEADOR</b><br />
+                                </td>
+                                <td style="width:5%;text-align:center" class='letra5'>
+                                    <b> _______________________</b><br />
+                                    <b>
+                                        <t t-esc="employee.name" /></b><br />
+                                    <b> RUT
+                                        <t t-esc="employee.identification_id" /></b><br />
+                                    <b> TRABAJADOR:</b><br />
+
+                                </td>
+
+                            </tr>
+
+                        </thead>
+                    </table>
+                </div>
+
+            </t>
+        </t>
+    </template>
+</odoo>

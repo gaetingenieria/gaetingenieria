@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="contrat_format">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="header">
+                        <style type="text/css">
+                            .header {
+                                margin: 0px;
+                                padding: 0px;
+                            }
+
+                            .cabecera {
+                                font-size: 7px;
+                                font-family: 'Arial' !important;
+                            }
+
+                            .letra {
+                                font-size: 14px !important;
+                                margin: 0px;
+                            }
+
+                            .letra3 {
+                                font-size: 15px !important;
+                                margin: 0px;
+                                padding-left: 3px !important;
+                                padding-right: 3px !important;
+                            }
+
+                            .cabecera2 {
+                                font-size: 9px;
+                                font-family: 'Arial' !important;
+                            }
+
+                            .columnasr {
+                                font-size: 12px;
+                                font-family: 'Arial' !important;
+                                margin-bottom: 10px;
+                            }
+
+                            .columnas2 {
+                                font-size: 9px;
+                                font-family: 'Arial' !important;
+                            }
+
+                            h3 {
+                                font-family: 'Arial' !important;
+                                font-size: 14px;
+                                margin: 0px !important;
+                                padding: 0px !important;
+                            }
+
+                            td {
+                                font-family: 'Arial' !important;
+                                font-size: 12px;
+                                margin: 0px !important;
+                                padding: 0px !important;
+                            }
+
+                            h4 {
+                                font-family: 'Arial' !important;
+                                font-size: 12px;
+                                margin: 0px !important;
+                                padding: 0px !important;
+                            }
+
+                            span {
+                                font-family: 'Arial' !important;
+
+                                margin: 0px !important;
+                                padding: 0px !important;
+                            }
+
+                            body {
+                                font-family: 'Arial' !important;
+                                font-size: 18px;
+                            }
+
+                            hr {
+                                border-bottom: solid;
+                                border-width: 1pt border-top:0px !important;
+                                padding: 0px !important;
+                                margin: 0px !important;
+
+                            }
+
+                            tr.border_bottom td {
+                                border-bottom: 0.5pt solid #cccccc;
+                                margin-right: 3px;
+                                padding-right: 3px;
+                                font-size: 13px;
+                                font-family: 'Arial' !important;
+                            }
+
+                            .borde1 {
+                                border-top: 1px solid grey;
+                                border-left: 1px solid grey;
+                                border-right: 1px solid grey;
+                                border-bottom: 1px solid grey;
+                                margin-bottom: 3px;
+
+                            }
+
+                            .borde1 thead tr td {
+                                padding-left: 5px;
+                                padding-right: 5px;
+
+                            }
+
+                            .borde2 {
+                                border-left: 1px solid grey;
+                                border-right: 1px solid grey;
+                                border-top: 1px solid grey;
+                                margin: 3px;
+                            }
+
+                            .titulo {
+                                font-size: 25px;
+                                padding-top: 40px;
+                            }
+
+                            .titulo3 {
+                                font-size: 15px;
+                                padding-top: 40px;
+                                text-align: left;
+                            }
+
+                            .titulo2 {
+                                font-size: 25px;
+                                padding: 1px;
+                            }
+
+                            .letra0 {
+                                font-size: 11px;
+                            }
+
+                            .letra2 {
+                                font-size: 5px;
+                            }
+
+                            .letra5 {
+                                text-align: right;
+                                font-size: 5px;
+                            }
+
+
+                            .cuadro {
+                                border-left: 1px solid #000000 !important;
+                                padding-left: 4px !important;
+                                border-right: 1px solid #000000 !important;
+                                padding-right: 4px !important;
+                            }
+                        </style>
+                        <div class="col-12" style="text-align:center;" name='as_titulo'>
+                            <h2 class='titulo'>
+                                <div>
+
+                                    <b>CONTRATO DE TRABAJO</b><br />
+                                </div>
+                            </h2>
+                            <br />
+                            <br />
+                        </div>
+
+                        <table width="100%" class="table table-borderless borde1">
+
+                        </table>
+                    </div>
+                    <t t-call="web.internal_layout">
+
+                        <div class="page">
+                            <style type="text/css">
+                                .letra2 {
+                                    border: 1px solid #000000;
+                                    font-size: 9px;
+                                }
+
+                                .letra3 {
+                                    border: 1px solid #000000;
+                                    font-size: 9px;
+                                    text-align: right;
+                                }
+
+                                .letra5 {
+                                    font-size: 18px;
+                                    text-align: center;
+                                }
+
+                                .parrafo {
+                                    font-size: 18px;
+                                    text-align: justify;
+                                    line-height: 25px;
+                                }
+                            </style>
+                            <div class="col-12" style="text-align:left;font-size: 18px;" name='as_titulo'>
+                                <br />
+
+                                <div class="parrafo">
+                                    En <span t-esc="o.info_sucursal()['ciudad']" />, a
+                                    <t t-esc="fecha_actual" />, entre el Administrador <b><span
+                                            t-esc="o.info_sucursal()['nombre_empresa']" /></b>,
+                                    R.U.T <b>
+                                        <t t-esc="o.info_sucursal()['nit']" /></b>, ubicado en
+                                    <t t-esc="o.info_sucursal()['direccion1']" /> comuna de <span
+                                        t-esc="o.info_sucursal()['comuna']" />,
+                                    representada legalmente por don(a) <b><span
+                                            t-esc="o.info_sucursal()['registro']" /></b>, cédula de
+                                    identidad <b><span t-esc="o.info_sucursal()['rut']" /></b>, con domicilio en el
+                                    mismo edificio, en
+                                    adelante "el empleador" y don(a) <b>
+                                        <t t-esc="o.employee_id.name" /></b>, de nacionalidad <b><span
+                                            t-esc="o.employee_id.country_of_birth.name" /></b>, cédula de identidad N°
+                                    <b>
+                                        <t t-esc="o.employee_id.identification_id" /></b>, fecha de nacimiento
+                                    <t t-esc="o.get_date_employee(o.employee_id.birthday)" />, de estado civil <b><span t-esc="o.get_material(o.employee_id.marital)" /></b>,
+                                    domiciliado en <b><span t-esc="o.employee_id.address_home_id.name" /></b>, de la
+                                    ciudad de <b><span t-esc="o.employee_id.country_id.name" /></b>, en adelante “El
+                                    Trabajador”, ambas partes
+                                    mayores de edad, se ha convenido siguiente Contrato laboral:
+                                    <br />
+                                    <br />
+
+                                    <b>PRIMERO:</b> El Trabajador se compromete a realizar las labores de <b><span
+                                            t-esc="o.job_id.name" /></b>, de la Comunidad <b><span
+                                            t-esc="o.employer_id.name" /></b>.
+                                    <br />
+                                    Serán labores de acuerdo a lo establecido en el reglamento interno de la comunidad,
+                                    para lo cual el Trabajador toma conocimiento, y deberán desarrollarse con el
+                                    eficiente cuidado de los bienes de la comunidad y con el debido orden de la misma.
+                                    Resolverá prudentemente todo lo que se interfiera con las órdenes emanadas del
+                                    Administrador o del Comité de Administración o su Presidente. Por tratarse de un
+                                    cargo de confianza, las faltas a la ética que, en otro caso serían leves, en este se
+                                    elevan a la calidad de graves y, a discreción del empleador, pueden dar lugar a la
+                                    terminación del contrato.
+                                    <br />
+                                    <br />
+                                    <b>SEGUNDO: </b>Los servicios contratados se prestarán en la Comunidad <b><span
+                                            t-esc="o.employer_id.name" /></b>, ubicada en <b><span
+                                            t-esc="o.employer_id.address" /></b>, de la Comuna de <b><span
+                                            t-esc="o.info_sucursal()['comuna']" /></b>, Ciudad de <b><span
+                                            t-esc="o.info_sucursal()['ciudad']" /></b>, sin perjuicio de la facultad del
+                                    Empleador de alterar, por causa justificada, la naturaleza de los servicios o del
+                                    sitio o recinto en que los servicios han de prestarse, con la limitación de que se
+                                    trate de labores similares, y que el nuevo recinto donde se deban prestar estas
+                                    labores se encuentre dentro de la misma localidad o ciudad, y sin que ello
+                                    signifique menoscabo para el trabajador.
+                                    <br />
+                                    <br />
+                                    <t t-if="o.type_id.as_tipo_format == 'part_time'">
+                                        <b>TERCERO: </b>La Jornada de Trabajo tendrá el siguiente horario según se
+                                        detalla, pudiendo el empleador efectuar ajustes o cambios de horario cuando lo
+                                        estime conveniente.
+                                        <br />
+                                        <t t-foreach="o.get_horario()" t-as="e">
+                                            <t t-if="e['turn'] == 'morning'">
+                                                <b>Mañana: </b>
+                                                <b><span t-esc="e['day']" /> <span t-esc="e['hour_from']" />-<span
+                                                        t-esc="e['hour_to']" /> Hrs.</b>
+                                            </t>
+                                           <br />
+                                            <t t-if="e['turn'] != 'morning'">
+                                                <b>Tarde: </b>
+                                                <b><span t-esc="e['day']" /> <span t-esc="e['hour_from']" />-<span
+                                                        t-esc="e['hour_to']" /> Hrs.</b>
+                                            </t>
+                                        </t><br />
+                                        Teniendo como periodo de colación, 30 minutos, lo que no formara parte de la
+                                        jornada de trabajo y será carga exclusiva del trabajador, está jornada de
+                                        trabajo incluye todos los días festivos que puedan recaer en los días
+                                        pactados.
+                                        El empleador, en conformidad con la Ley de acuerdo con las necesidades del
+                                        funcionamiento de la Comunidad del Edificio podrá alterar el horario de
+                                        inicio y término de la jornada diaria de trabajo. El trabajador se
+                                        compromete a trabajar con dedicación durante la jornada convenida.
+
+                                    </t>
+                                    <t t-if="o.type_id.as_tipo_format != 'part_time'">
+                                        <b>TERCERO: </b>La Jornada de Trabajo tendrá el siguiente horario según se
+                                        detalla, pudiendo el empleador efectuar ajustes o cambios de horario cuando lo
+                                        estime conveniente.
+                                        <br />
+                                        <t t-foreach="o.get_horario()" t-as="e">
+                                            <t t-if="e['turn'] == 'morning'">
+                                                <b>Mañana: </b>
+                                                <b><span t-esc="e['day']" /> <span t-esc="e['hour_from']" />-<span
+                                                        t-esc="e['hour_to']" /> Hrs.</b>
+                                            </t>
+                                            <br />
+                                            <t t-if="e['turn'] != 'morning'">
+                                                <b>Tarde: </b>
+                                                <b><span t-esc="e['day']" /> <span t-esc="e['hour_from']" />-<span
+                                                        t-esc="e['hour_to']" /> Hrs.</b>
+                                            </t>
+                                        </t><br />
+                                        Teniendo como periodo de colación, 30 minutos, lo que no formara parte de la
+                                        jornada de trabajo y será carga exclusiva del trabajador, está jornada de
+                                        trabajo incluye todos los días festivos que puedan recaer en los días
+                                        pactados.
+                                        El empleador, en conformidad con la Ley de acuerdo con las necesidades del
+                                        funcionamiento de la Comunidad del Edificio podrá alterar el horario de
+                                        inicio y término de la jornada diaria de trabajo. El trabajador se
+                                        compromete a trabajar con dedicación durante la jornada convenida.
+
+
+                                    </t>
+                                    <br />
+                                    <br />
+                                    <b>CUARTO: </b> La remuneración del trabajador será la suma mensual de Sueldo Bruto
+                                    POR CADA TURNO de $<b><span t-esc="o.wage" /></b>- <b><span
+                                            t-esc="o.get_amount(o.wage)" /></b>, bono por Colación $<b><span t-esc="o.colacion" /></b>- (<b><span
+                                            t-esc="o.get_amount(o.colacion)" /></b>).- y bono por movilización $<b><span t-esc="o.movilizacion" /></b>- (<b><span
+                                            t-esc="o.get_amount(o.movilizacion)" /></b>)., por mes calendario,
+                                    que será liquidada y pagada por períodos vencidos en la oficina del empleador o por
+                                    transferencia electrónica a la cuenta personal del trabajador y autorizada por el
+                                    mismo, a más tardar el quinto día hábil del mes siguiente de cada mes.
+
+                                    De la remuneración se deducirán los impuestos, las cotizaciones de seguridad social
+                                    y otras obligaciones en conformidad a lo establecido en el Código del Trabajo.
+
+                                    No se podrán hacer otras deducciones salvo que estén autorizados por la ley; o las
+                                    que hayan sido ordenadas judicialmente o que sean autorizadas por el trabajador por
+                                    escrito. Todo sin perjuicio de los anticipos de remuneración dentro de cada período,
+                                    que autoriza a realizar el trabajador de antemano. Lo propio para descontar el
+                                    tiempo no trabajado debido a las inasistencias, permisos y/o atrasos.
+
+                                    <br />
+                                    <br />
+<b>QUINTO:</b> El empleador se compromete a otorgar o a suministrar al trabajador, los siguientes beneficios:
+
+1.	Un espacio físico para realizar las labores que al efecto tiene el Edificio, lo que no constituye renta ni regalía evaluable en dinero.  
+
+2.	Vestuario  como polera (s)  y/o camisa (s) y poleron de polar, pantalón y zapatos de seguridad . Conservar y devolver al empleador una vez terminado el presente contrato, los elementos suministrados, específicamente distintivos y ropa de trabajo. 
+
+Cualquier otra prestación o beneficio, ocasional o periódico, que el empleador conceda al trabajador, distinto que el que le corresponda por este contrato y sus ajustes legales o contractuales, se entenderá conferido a título de mera liberalidad, no dará derecho alguno, y el empleador podrá suspenderlo o modificarlo, a su arbitrio. 
+
+
+                                    <br />
+                                    <br />
+                                    <b>SEXTO:</b> Son obligaciones esenciales del trabador, cuya infracción las partes entienden como causa justificada de terminación del presente contrato, las siguientes:  
+ <br />
+a)	Supervisión del personal de portería, aseadores, nocheros,  jardineros y/o cuidadores: El Trabajador deberá anotar personalmente, en el libro de asistencia, la hora de llegada y salida.
+ <br />
+b)	Supervisión de la entrada de trabajadores al recinto del Edificio/ Condominio y la salida del mismo, mantenimiento perfecto orden y disciplina y cumplimiento, esmeradamente, con los controles del caso; incluso el debido funcionamiento de los relojes controles; y cumplir estrictamente, las instrucciones de sus superiores.
+ <br />
+c)	Supervisión y/o ejecución del aseo cuidadoso y total de las entradas, pasillos, otros lugares comunes del Edificio, cuidado de los jardines, supervisión de los aseadores y jardineros y el aseo y buen mantenimiento de los servicios higiénicos y baños del personal, de las llaves y conductos de agua, de gas, de iluminación y de energía eléctrica comunes, además del correcto funcionamiento de ascensores, citófonos, puertas y extintores. 
+ <br />
+Deberá controlar permanentemente el acopio de basura el que debe efectuarse cada 4 horas cómo mínimo. Además deberá hacer retirar, a primera hora del día, las bolsas de basura al exterior los días de recorrido del camión recolector.
+ <br />
+d)	Supervisión  y/o ejecución del mantenimiento del edificio tales como  pinturas, quincho, piscina, sala de caldera, bomba de agua, lavandería, salas multiuso, generador de emergencia, tablero eléctrico, ascensores y  cualquier instalación de la comunidad en general, requiriendo, oportunamente, las reparaciones que fueren necesarias;
+ <br />
+e)	Supervisión de la seguridad del recinto, controlando la entrada de cualquier persona extraña, dando aviso a los residentes,  y registrando  las visitas que reciban, solicitando y registrando, a los funcionarios de las empresas de servicios, sus respectivas identificaciones;
+ <br />
+f)	Toda anormalidad que constate, de cualquier especie y que entrañe cualquier peligro, deberá dar cuenta inmediata al empleador. Sin perjuicio deberá llamar a Bomberos, Carabineros, Investigaciones, Compañía de Electricidad, Compañía de Gas u otros servicios u Organismos de Urgencia, cuando proceda; y en caso de duda lo comunicará inmediatamente al Presidente de Administración o quién lo secunde o subrogue.
+ <br />
+g)	Se deja especial constancia que la excelente buena voluntad que el  trabajador debe demostrar con cada uno de los locatarios, dueños y arrendatarios, no significa, absolutamente, que deba y pueda realizar labores particulares, para cualquiera de éstos, en horas que son de trabajo o fuera del horario.
+ <br />
+h)	Cumplirá íntegramente  y estrictamente la jornada de trabajo; horas extras solo serán canceladas en caso que sean autorizadas previamente por el empleador.
+ <br />
+i)	Realizar reemplazo del conserje de turno durante su descaso diario entre jornada o cuando este lo requiera ante alguna salida inspectiva de la conserjería, siendo en todo caso siempre por motivos calificados, cumpliendo a cabalidad de las obligaciones que posee el personal, además atender y recibir durante la jornada de trabajo las quejas y reclamos que formulen los ocupantes/residentes de los departamentos del edificio, transmitiéndolas oportunamente y eficazmente, sin interferencia ni distorsión al Administrador.
+ <br />
+j)	Cuidará y mantendrá, en perfecto estado de conservación, las instalaciones, máquinas, útiles y otros bienes de la comunidad;
+ <br />
+k)	Velar por el buen funcionamiento del servicio de iluminación de los espacios comunes, disponiendo la sustitución de ampolletas falladas y cualquier otro requerimiento. 
+ <br />
+l)	El trabajador tendrá la obligación de registrar su  entrada y salida en el libro de asistencia. 
+ <br />
+m)	En caso de inasistencia al trabajo, por enfermedad, el trabajador deberá justificarla, únicamente, con el correspondiente certificado médico, dentro de las 24 horas, desde que aquél dejó de asistir al trabajo;
+ <br />
+n)	Ejecutar todas las labores inherentes a su cargo, conforme a la naturaleza del mismo y según el principio de la buena fe.
+ <br />
+o)	Mantener absoluta reserva de los antecedentes relativos a los ocupantes del condominio, sean estos propietarios o arrendatarios, de los que tome conocimiento durante el desempeño de sus funciones.
+ <br />
+p)	Informar a su empleador de cualquier acontecimiento que altere la tranquilidad de la comunidad; debiendo comunicar dichos eventos y efectuar el debido registro en el libro de bitácora que se lleva para tales efectos.
+ <br />
+q)	Observar en cualquier circunstancia una actitud respetuosa, deferente y cortes con los ocupantes del Edificio y con las visitas de los mismos al relacionarse con estos.
+ <br />
+
+r)	No presentarse a su turno bajo ninguna circunstancia bajo la influencia del alcohol o estupefacientes, ni consumir o ingerir durante la jornada del trabajo
+ <br />
+s)	Abstenerse de acceder a requerimientos de servicios particulares que le puedan eventualmente formular ocupantes del edificio y que no guarden relación con las obligaciones determinadas en el presente contrato; El trabajador declara entender y aceptar que su subordinación y dependencia se personifica en el administrador, como en el representante legal del mismo, y no en la persona o personas de ocupantes determinados, sean propietarios, arrendatarios o terceros.
+ <br />
+t)	Evitar dar acceso a los espacios de conserjería o recepción a personas que no sean trabajadores contratados a menos que exista una instrucción expresa de la Directiva  con razones fundamentadas para esto. 
+ <br />
+u)	Impedir que visitantes utilicen estacionamientos de los residentes y evitar que estos mismos utilicen por el tiempo delimitado por Reglamento de Copropiedad de los estacionamientos destinados para visitas. 
+  <br />
+    <br />
+<b>SEPTIMO:</b>   El trabajador respetará, celosamente, el Reglamento de Copropiedad, cuyo texto ha recibido y declara conocer y que se entiende como parte integrante de este contrato.
+ <br /> <br />
+<b>OCTAVO:</b> El trabajador se obliga a desarrollar su trabajo con el debido cuidado, evitando comprometer la seguridad y la salud del resto de los trabajadores de la Comunidad del Edificio  y del Medio Ambiente. La infracción o incumplimiento de cualquiera de las obligaciones antes mencionadas, se estimará como incumplimiento grave de su contrato de trabajo y, cuando proceda, el empleador se reserva el derecho de hacer declarar el término de la convención, sin indemnización alguna.
+ <br />
+Asimismo se le prohíben los siguientes actos:
+ <br />
+1. Ejecutar durante la jornada de trabajo y/o en el recinto del empleador, actividades ajenas a su labor en el Edificio y/o dedicarse a atender asuntos particulares sin la debida y manifiesta autorización del empleador.
+ <br /> <br />
+ <b>NOVENO:</b> Este contrato tendrá una vigencia de <b><span
+                                            t-esc="o.type_id.as_tipo" /></b>
+                                             <t t-if="o.type_id.as_tipo_format == 'part_time'">
+                                           , con duración hasta el <b><span
+                                            t-esc="o.get_date_literal(o.date_end)" /></b>
+                                            </t>,  podrá ponérsele término de acuerdo a la Legislación Vigente.
+
+<br /><br />
+<b>DECIMO:</b> Se deja constancia que don/doña <b><span
+                                            t-esc="o.name" /></b>, ingresó al servicio del empleador el  día <b><span
+                                            t-esc="o.get_date_literal(o.date_start)" /></b>.
+<br /><br />
+<b>UNDECIMO:</b> Se declarará y pagará al trabajador las cotizaciones previsionales y de salud según detalle:
+AFP     : MODELO
+SALUD: FONASA
+<br /><br />
+
+<b>DUODECIMO:</b> El trabajador se obliga y compromete a pagar en Chile todos los impuestos que por derecho y obligación tenga que pagar.
+<br /><br />
+
+<b>DECIMOTERCERO:</b> Para todos los efectos legales, las partes fijan su domicilio en la ciudad de Santiago y se someten a la jurisdicción de los tribunales de justicia de la ciudad de Santiago. El trabajador deja constancia que al momento de ser constatado él tenía su domicilio y residencia en la ciudad de Santiago. 
+<br /><br />
+
+<b>DECIMOCUARTO:</b> El presente contrato se firmará en dos ejemplares del mismo tenor dejando expresa constancia que en este acto el trabajador recibe uno de ellos.  Se entiende incorporadas al presente contrato todas las disposiciones legales que se dicten con posterioridad  la fecha de suscripción y que tenga relación con él.
+<br /><br />
+
+                                    <br />
+                                </div>
+                            </div>
+                            <table width="100%" name="footer_table">
+                        <thead style='border:1px solid #FFFFFF;line-height : 25px;'>
+                            <tr>
+                                <td style="width:25%;text-align:center" class='letra5'>
+                                    <t t-if="o.employer_id.icon_image">
+                                        <img t-att-src="image_data_uri(o.employer_id.icon_image)"
+                                            style="height: 85px; width: 150px;" />
+                                    </t>
+
+                                </td>
+                                <td style="width:25%;text-align:center" class='letra5'>
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td style="width:25%;text-align:center" class='letra5'>
+                                    <b> ________________________</b><br />
+                                    <b> <span t-esc="o.info_sucursal()['nombre_empresa']" /></b><br />
+                                    <b> RUT <span t-esc="o.info_sucursal()['nit']" /></b><br />
+                                    <b> <span t-esc="o.info_sucursal()['direccion1']" /></b><br />
+                                    <b> Cédula de Identidad <span t-esc="o.info_sucursal()['rut']" /></b><br />
+
+                                </td>
+                                <td style="width:25%;text-align:center" class='letra5'>
+                                    <b> _______________________</b><br />
+                                    <b>
+                                        <t t-esc="o.employee_id.name" /></b><br />
+                                    <b> Cédula de Identidad 
+                                        <t t-esc="o.employee_id.identification_id" /></b><br />
+
+                                </td>
+
+                            </tr>
+
+                        </thead>
+                    </table>
+                        </div>
+
+                    </t>
+                </t>
+            </t>
+        </template>
+        <template id="report_contract_print">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="as_hr_cl.contrat_format" t-lang="lang" />
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

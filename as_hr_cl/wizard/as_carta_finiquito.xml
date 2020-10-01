@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_carta_finiquito" model="ir.ui.view">
+            <field name="name">Carta de Finiquito</field>
+            <field name="model">as.carta.finiquito</field>
+            <field name="arch" type="xml">
+                <form string="Carta de Finiquito">
+                    <group col="2">
+                        <field name="partner_id" options="{'no_create': True}"/>
+                        <field name="employer_id" options="{'no_create': True}"/>
+                        <field name="contract_id" options="{'no_create': True}"/>
+                        <field name="date" />    
+                         <label for="as_anti_year" string="Antiguedad (y-m-d)"/>
+                            <div>
+                                <div><field name="as_anti_year" class="oe_inline"/></div>
+                                <div><field name="as_anti_mounth" class="oe_inline"/></div>
+                                <div><field name="as_anti_days" class="oe_inline"/></div>
+                        </div>
+                        <field name="total" />
+                        <field name="as_tiempo" />
+                        <field name="as_seguro" />
+                        <field name="dias" />
+                         <field name="as_articulo_id" />
+                         
+                    </group>
+                    <footer>
+                        <button name="export_pdf" type="object" default_focus="1" string="Generar PDF"
+                            icon="fa-print" class="oe_highlight" />
+
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="as_report_carta_finiquito" model="ir.actions.act_window">
+            <field name="name">Carta de Finiquito</field>
+            <field name="res_model">as.carta.finiquito</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_carta_finiquito" />
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="as_carta_finiquito_report" name="Carta de Finiquito" action="as_report_carta_finiquito"
+            parent="menu_cl_hr_payroll_reports" sequence="57"/>
+    </data>
+</odoo>

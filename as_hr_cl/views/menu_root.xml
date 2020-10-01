@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<!-- menus principales bajo en menu Nominas -->
+	<menuitem id="menu_cl_hr_payroll_base" name="Nómina General"
+		parent="hr_payroll.menu_hr_payroll_root" sequence="2"
+		groups="hr_payroll.group_hr_payroll_user" />
+    <menuitem
+        id="hr_payroll.menu_hr_payroll_payslips"
+        name="Payslips"
+        parent="hr_payroll.menu_hr_payroll_root"
+        sequence="3"
+        groups="hr_payroll.group_hr_payroll_user"/>
+<!-- 
+	<menuitem id="menu_cl_hr_payroll_addons"
+		name="Adicionales Nómina" parent="hr_payroll.menu_hr_payroll_root"
+		sequence="3" /> -->
+
+	<menuitem id="menu_cl_hr_payroll_indicators" name="Parametros"
+		parent="hr_payroll.menu_hr_payroll_root" sequence="4"
+		groups="hr_payroll.group_hr_payroll_user" />
+
+	<menuitem id="menu_cl_hr_payroll_master_data"
+		name="Master Data" parent="hr_payroll.menu_hr_payroll_root"
+		sequence="5" groups="hr_payroll.group_hr_payroll_user" />
+
+	<menuitem id="menu_cl_hr_payroll_reports" name="Reports"
+		parent="hr_payroll.menu_hr_payroll_report" sequence="6"
+		groups="hr_payroll.group_hr_payroll_user" />
+
+	<menuitem id="menu_cl_hr_payroll_configuration"
+		name="Chilean Configuration"
+		parent="hr_payroll.menu_hr_payroll_configuration" sequence="101"
+		groups="hr_payroll.group_hr_payroll_user" />
+
+	<!-- submenus 
+	<menuitem id="hr_menu_contract"
+		action="hr_contract.action_hr_contract"
+		parent="hr_payroll.menu_hr_payroll_root" sequence="1"
+		groups="hr_contract.group_hr_contract_manager" />-->
+
+	<!-- mover menus de nominas y registros de nominas a un menu principal
+	<record id="hr.menu_hr_department_tree" model="ir.ui.menu">
+		<field name="parent_id" ref="menu_cl_hr_payroll_base" />
+	</record> -->
+
+	<record id="hr_payroll.menu_hr_payslip_run" model="ir.ui.menu">
+		<field name="parent_id" ref="menu_cl_hr_payroll_base" />
+	</record>
+
+	<!-- Menu DATOS MAESTROS -->
+	<menuitem id="cl_hr_menu_hr_job_tree"
+		action="hr.action_hr_job" parent="menu_cl_hr_payroll_master_data"
+		sequence="2" groups="hr_payroll.group_hr_payroll_user" />
+
+	<menuitem id="cl_hr_menu_hr_department_tree"
+		action="hr.open_module_tree_department"
+		parent="menu_cl_hr_payroll_master_data" sequence="3"
+		groups="hr.group_hr_user" />
+
+	<menuitem id="cl_hr_menu_view_employee_category_form"
+		action="hr.open_view_categ_form"
+		parent="menu_cl_hr_payroll_master_data" sequence="4"
+		groups="hr.group_hr_user" />
+
+	<menuitem id="cl_hr_partner_bank_account_tree_view"
+		action="base.action_res_partner_bank_account_form"
+		parent="menu_cl_hr_payroll_master_data" sequence="5"
+		groups="hr_payroll.group_hr_payroll_user" />
+
+	<menuitem id="cl_hr_account_analytic_def_account"
+		action="analytic.action_account_analytic_account_form"
+		parent="menu_cl_hr_payroll_master_data" sequence="6"
+		groups="analytic.group_analytic_accounting" />
+
+	<menuitem id="cl_hr_account_analytic_group_menu"
+		action="analytic.account_analytic_group_action"
+		parent="menu_cl_hr_payroll_master_data" sequence="7"
+		groups="analytic.group_analytic_accounting" />
+
+	<menuitem id="cl_hr_resource_calendar_form"
+		action="resource.action_resource_calendar_form"
+		parent="menu_cl_hr_payroll_master_data" sequence="8"
+		groups="hr_payroll.group_hr_payroll_user" />
+
+	<menuitem id="cl_hr_resource_calendar_leave_tree"
+		action="resource.action_resource_calendar_leave_tree"
+		parent="menu_cl_hr_payroll_master_data" sequence="9"
+		groups="hr_payroll.group_hr_payroll_user" />
+	<!-- #Report -->
+        <report 
+        id="as_hr_cl_carta_preaviso_report" 
+        model="as.carta.preaviso" 
+        string="Carta de Preaviso"
+        report_type="qweb-pdf"
+        name="as_hr_cl.carta_preaviso" 
+        file="as_hr_cl.carta_preaviso"
+        attachment_use="False" 
+        menu="False" />
+	
+        <record id="as_report_papeletas_windows_paperformat" model="report.paperformat">
+            <field name="name">Carta de Preaviso</field>
+            <field name="default" eval="True" />
+            <field name="format">Letter</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">63</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">20</field>
+            <field name="margin_right">20</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">49</field>
+            <field name="dpi">90</field>
+            <field name="report_ids" eval="[(4, ref('as_hr_cl.as_hr_cl_carta_preaviso_report'))]" />
+        </record>
+		<report 
+        id="as_hr_cl_carta_finiquito_report" 
+        model="as.carta.finiquito" 
+        string="Carta de Finiquito"
+        report_type="qweb-pdf"
+        name="as_hr_cl.carta_finiquito" 
+        file="as_hr_cl.carta_finiquito"
+        attachment_use="False" 
+        menu="False" />
+	
+        <record id="as_report_finiquito_windows_paperformat" model="report.paperformat">
+            <field name="name">Carta de Finiquito</field>
+            <field name="default" eval="True" />
+            <field name="format">Letter</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">30</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">20</field>
+            <field name="margin_right">20</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">25</field>
+            <field name="dpi">90</field>
+            <field name="report_ids" eval="[(4, ref('as_hr_cl.as_hr_cl_carta_finiquito_report'))]" />
+        </record>
+	<report 
+        id="as_hr_cl_anexo_contrato_report" 
+        model="hr.contract" 
+        string="Anexo de Contrato"
+        report_type="qweb-pdf"
+        name="as_hr_cl.anexo_contrato" 
+        file="as_hr_cl.anexo_contrato"
+        attachment_use="False" 
+        menu="False" />
+	
+        <record id="as_report_anexo_contrato_windows_paperformat" model="report.paperformat">
+            <field name="name">Anexo de Contratos</field>
+            <field name="default" eval="True" />
+            <field name="format">Letter</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">30</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">20</field>
+            <field name="margin_right">20</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">25</field>
+            <field name="dpi">90</field>
+            <field name="report_ids" eval="[(4, ref('as_hr_cl.as_hr_cl_anexo_contrato_report'))]" />
+        </record>
+    	<report 
+        id="as_hr_cl_contract" 
+        model="hr.contract" 
+        string="Contrato"
+        report_type="qweb-pdf"
+        name="as_hr_cl.report_contract_print" 
+        file="as_hr_cl.report_contract_print"
+        attachment_use="False" 
+        menu="True" />
+	
+        <record id="as_report_contrato_windows_paperformat" model="report.paperformat">
+            <field name="name">Contratos</field>
+            <field name="default" eval="True" />
+            <field name="format">Letter</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">30</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">20</field>
+            <field name="margin_right">20</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">25</field>
+            <field name="dpi">90</field>
+            <field name="report_ids" eval="[(4, ref('as_hr_cl.as_hr_cl_contract'))]" />
+        </record>
+</odoo>

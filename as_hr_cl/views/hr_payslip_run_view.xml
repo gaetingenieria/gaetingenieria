@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_payslip_run_form_inherit5" model="ir.ui.view">
+            <field name="name">hr.payslip.run.form.inherit5</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form" />
+            <field name="arch" type="xml">
+                <field name="credit_note" position="before">
+                    <field name="indicadores_id" />
+                    <field name="movimientos_personal" invisible="1" />
+                </field>
+                <xpath expr="//sheet/group" position="after">
+                    <notebook name="lineas">
+                        <page string="Nominas">
+                            <field name="slip_ids">
+                                <tree string="Payslips Batches" editable="bottom">
+                                    <field name="number" readonly="True" force_save="1" />
+                                    <field name="employee_id" />
+                                    <field name="name" />
+                                    <field name="date_from" />
+                                    <field name="date_to" />
+                                    <field name="state" />
+                                    <field name="as_days" />
+                                    <field name="as_ingresos" />
+                                    <field name="as_egresos" />
+                                    <field name="net_wage" />
+                                    <field name="company_id" groups="base.group_multi_company"
+                                        options="{'no_create': True}" />
+                                    <field name="payslip_run_id" invisible="1" />
+                                    <button name="get_slip_employee" type="object" default_focus="1" string=""
+                                        context="{'xls_export':1}" icon="fa-address-card" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Contabilidad">
+                        <group>
+                            <field name="move_id" />
+                        </group>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+         <record id="hr_payslip_run_tree_inherit_tree" model="ir.ui.view">
+            <field name="name">hr.payslip.run.tree.inherit5</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_res_employer_view">
+        <field name="name">as.hr.employer</field>
+        <field name="model">as.hr.employer</field>
+        <field name="inherit_id" ref="as_hr_employer.hr_employee_rules_form" />
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='address']" position="after">
+                <field name="ccaf_id"/>
+                <field name="caja_compensacion" string="Tasa"/>
+                <field name="fonasa"/>
+                <field name="tope_imponible_salud"
+											string="Tope Imponible Salud %">
+										</field>
+                <field name="mutual_seguridad_bool" string="Tiene Mutual" />
+                <field name="mutualidad_id" string="Nombre"
+                    attrs="{'invisible': [('mutual_seguridad_bool', '=', False)]}" />
+                <field name="mutual_seguridad" attrs="{'invisible': [('mutual_seguridad_bool', '=', False)]}" />
+                <field name="isl" attrs="{'invisible': [('mutual_seguridad_bool', '=', True)]}" />
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

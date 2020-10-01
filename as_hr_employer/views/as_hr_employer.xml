@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="hr_employee_rules_form" model="ir.ui.view">
+			<field name="name">as.hr.employer.form</field>
+			<field name="model">as.hr.employer</field>
+			<field name="arch" type="xml">
+				<form string="employee_rules">
+					<sheet>
+						<div class="oe_title">
+							<label for="name" string="Nombre Regla" />
+							<h1>
+								<field name="name" />
+							</h1>
+						</div>
+						<group col="4">
+								<field name="rut"/>
+								<field name="address"/>
+								  <field name="representante_name" />
+									<field name="representante_rut" />
+									<field name="comuna" />
+									<field name="icon_image" widget="image" class="float-left oe_avatar"/>
+									<field name="icon_logo" widget="image" class="float-left oe_avatar"/>
+  
+						</group>
+                
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<act_window id="hr_employeer_action" name="Empleadores"
+			res_model="as.hr.employer" view_mode="tree,form" />
+
+		<menuitem id="hr_employee_rules_menu" parent="hr_payroll.menu_hr_salary_configuration"
+			action="hr_employeer_action" sequence="14" />
+	</data>
+</odoo>

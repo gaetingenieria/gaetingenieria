@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>						
+    <data>      
+     
+        <record id="email_contract_edi_hr_2" model="mail.template">
+            <field name="name">Contratos: Estatus de Contratos2</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="subject">${object.company_id.name}</field>
+            <field name="email_from">${object.env.user.company_id.partner_id.email}</field>
+            <field name="email_to">${object.employee_id.address_id.email}</field>
+            <field name="body_html" type="html">
+<div style="font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin:0px;padding: 0px;">
+    <p style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;"><font><font color="#000000" style="font-size: 13px;"><span style="font-size: 24px;"><b style="font-weight:bolder;">Hola </b></span></font><font color="#000000"><span style="font-size: 24px;"><b style="font-weight:bolder;">${object.env.user.company_id.partner_id.name}</b></span></font><font color="#000000" style="font-size: 13px;"><span style="font-size: 24px;"><b style="font-weight:bolder;">!</b></span></font></font></p><p style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;"></p><p style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;"><b style="font-weight:bolder;"><font style="color: rgb(0, 0, 0); font-size: 24px;">El(La) empleado(a) de contrato </font><font style="background-color: rgb(255, 0, 0); color: rgb(0, 0, 0); font-size: 24px;">${object.name} </font><font style="color: rgb(0, 0, 0); font-size: 24px;">esta por vencerse, su fecha de caducidad de contrato es el</font><span style="background-color: rgb(255, 156, 0); color: rgb(0, 0, 0); font-size: 24px; font-style: inherit; font-variant-caps: inherit; font-variant-ligatures: inherit; text-align: inherit;">${object.date_end}</span></b></p>
+</div>
+            
+            </field>
+        </record>
+    </data>						
+</odoo>						

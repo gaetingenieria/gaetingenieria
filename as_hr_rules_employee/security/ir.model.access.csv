@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employee_rules,hr_employee_rules,model_hr_employee_rules,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_hr_rule_control,hr_rule_control,model_hr_rule_control,hr_payroll.group_hr_payroll_manager,1,1,1,1

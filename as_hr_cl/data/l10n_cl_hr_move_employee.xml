@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_move_employee_modelo1" model="hr.move.employee">
+            <field name="codigo">0</field>
+            <field name="name">Sin Movimiento en el Mes</field>
+        </record>
+        <record id="hr_move_employee_modelo2" model="hr.move.employee">
+            <field name="codigo">1</field>
+            <field name="name">Contratación a plazo indefinido</field>
+        </record>
+        <record id="hr_move_employee_modelo3" model="hr.move.employee">
+            <field name="codigo">2</field>
+            <field name="name">Retiro</field>
+        </record>
+        <record id="hr_move_employee_modelo4" model="hr.move.employee">
+            <field name="codigo">3</field>
+            <field name="name">Subsidios (L Médicas)</field>
+        </record>
+        <record id="hr_move_employee_modelo5" model="hr.move.employee">
+            <field name="codigo">4</field>
+            <field name="name">Permiso Sin Goce de Sueldos</field>
+        </record>
+        <record id="hr_move_employee_modelo6" model="hr.move.employee">
+            <field name="codigo">5</field>
+            <field name="name">Incorporación en el Lugar de Trabajo</field>
+        </record>
+        <record id="hr_move_employee_modelo7" model="hr.move.employee">
+            <field name="codigo">6</field>
+            <field name="name">Accidentes del Trabajo</field>
+        </record>
+        <record id="hr_move_employee_modelo8" model="hr.move.employee">
+            <field name="codigo">7</field>
+            <field name="name">Contratación a plazo fijo</field>
+        </record>
+        <record id="hr_move_employee_modelo9" model="hr.move.employee">
+            <field name="codigo">8</field>
+            <field name="name">Cambio Contrato plazo fijo a plazo indefinido</field>
+        </record>
+        <record id="hr_move_employee_modelo10" model="hr.move.employee">
+            <field name="codigo">11</field>
+            <field name="name">Otros Movimientos (Ausentismos)</field>
+        </record>
+        <record id="hr_move_employee_modelo11" model="hr.move.employee">
+            <field name="codigo">12</field>
+            <field name="name">Reliquidación, Premio, Bono</field>
+        </record>
+       
+    </data>
+</odoo>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="carta_preaviso">
+        <t t-call="web.html_container">
+
+            <div class="header">
+                <style type="text/css">
+                    .header {
+                        margin: 0px;
+                        padding: 0px;
+                    }
+
+                    .cabecera {
+                        font-size: 7px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .letra {
+                        font-size: 14px !important;
+                        margin: 0px;
+                    }
+
+                    .letra3 {
+                        font-size: 15px !important;
+                        margin: 0px;
+                        padding-left: 3px !important;
+                        padding-right: 3px !important;
+                    }
+
+                    .cabecera2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .columnasr {
+                        font-size: 12px;
+                        font-family: 'Arial' !important;
+                        margin-bottom: 10px;
+                    }
+
+                    .columnas2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    h3 {
+                        font-family: 'Arial' !important;
+                        font-size: 14px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    td {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    h4 {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    span {
+                        font-family: 'Arial' !important;
+
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    body {
+                        font-family: 'Arial' !important;
+                        font-size: 18px;
+                    }
+
+                    hr {
+                        border-bottom: solid;
+                        border-width: 1pt border-top:0px !important;
+                        padding: 0px !important;
+                        margin: 0px !important;
+
+                    }
+
+                    tr.border_bottom td {
+                        border-bottom: 0.5pt solid #cccccc;
+                        margin-right: 3px;
+                        padding-right: 3px;
+                        font-size: 13px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .borde1 {
+                        border-top: 1px solid grey;
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        border-bottom: 1px solid grey;
+                        margin-bottom: 3px;
+
+                    }
+
+                    .borde1 thead tr td {
+                        padding-left: 5px;
+                        padding-right: 5px;
+
+                    }
+
+                    .borde2 {
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        border-top: 1px solid grey;
+                        margin: 3px;
+                    }
+
+                    .titulo {
+                        font-size: 25px;
+                        padding-top: 40px;
+                    }
+
+                    .titulo3 {
+                        font-size: 15px;
+                        padding-top: 40px;
+                        text-align: left;
+                    }
+
+                    .titulo2 {
+                        font-size: 25px;
+                        padding: 1px;
+                    }
+
+                    .letra0 {
+                        font-size: 11px;
+                    }
+
+                    .letra2 {
+                        font-size: 5px;
+                    }
+
+                    .letra5 {
+                        text-align: right;
+                        font-size: 5px;
+                    }
+
+
+                    .cuadro {
+                        border-left: 1px solid #000000 !important;
+                        padding-left: 4px !important;
+                        border-right: 1px solid #000000 !important;
+                        padding-right: 4px !important;
+                    }
+                </style>
+                <div class="col-12" style="text-align:center;" name='as_titulo'>
+                    <h2 class='titulo'>
+                        <div>
+
+                            <b>Aviso de Término de Contrato de Trabajo</b><br />
+                        </div>
+                    </h2>
+                    <br />
+                    <br />
+                    <div style="text-align:left; margin-bottom:10px;font-size:20px;line-height : 20px;">
+                        <span t-esc="info['ciudad']" />, <span t-esc="fechas" />
+                        <b><br />
+                            <t t-if="employee.gender == 'male'">SEÑOR</t>
+                            <t t-if="employee.gender == 'female'">SEÑORA(ITA)</t><br />
+                            <t t-esc="employee.name" /><br />
+                            RUT
+                            <t t-esc="employee.identification_id" /><br />
+                            PRESENTE
+
+                        </b><br />
+                    </div>
+
+                </div>
+
+                <table width="100%" class="table table-borderless borde1">
+
+                </table>
+            </div>
+            <t t-call="web.internal_layout">
+
+                <div class="page">
+                    <style type="text/css">
+                        .letra2 {
+                            border: 1px solid #000000;
+                            font-size: 9px;
+                        }
+
+                        .letra3 {
+                            border: 1px solid #000000;
+                            font-size: 9px;
+                            text-align: right;
+                        }
+
+                        .letra5 {
+                            font-size: 18px;
+                            text-align: center;
+                        }
+
+                        .parrafo {
+                            font-size: 18px;
+                            text-align: justify;
+                            line-height: 25px;
+                        }
+                    </style>
+                    <div class="col-12" style="text-align:left;font-size: 18px;" name='as_titulo'>
+                        <br />
+                        Estimada:
+                        <br />
+                        <br />
+
+                        <div class="parrafo">Nos permitimos comunicar que con fecha de  <span t-esc="fechaend" />, se ha
+                            resuelto poner término al contrato de trabajo que lo vincula con la empresa, por la causal
+                            del artículo <span t-esc="articulo.as_articulo" />, inciso <span
+                                t-esc="articulo.as_inciso" />,  del Código del Trabajo, esto es,  <span
+                                t-esc="articulo.as_motivo" />.
+                            <br />
+                            <br />
+                            Los hechos en que se funda la causal invocada consisten en que: <span t-esc="fundamento" />.
+                            No tenemos otro puesto de trabajo que ofrecerle dentro de toda la empresa.
+                            <br />
+                            <br />
+                            Informo que sus cotizaciones previsionales se encuentran al día. Además, le adjuntamos
+                            certificado de cotizaciones de las entidades de previsión a las que se encuentra afiliado,
+                            que dan cuenta que las cotizaciones previsionales, del período trabajado, se encuentran
+                            pagadas
+                            <br />
+                            <br />
+                            <br />
+                            Saluda a usted,
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                    <table width="100%" name="footer_table">
+                        <thead style='border:1px solid #FFFFFF;line-height : 25px;'>
+                            <tr>
+                                <td style="width:5%;text-align:center" class='letra5'>
+                                    <t t-if="employer.icon_image">
+                                        <img t-att-src="image_data_uri(employer.icon_image)"
+                                            style="height: 85px; width: 150px;" />
+                                    </t>
+
+                                </td>
+                                <td style="width:5%;text-align:center" class='letra5'>
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td style="width:5%;text-align:center" class='letra5'>
+                                    <b> ________________________</b><br />
+                                    <b> <span t-esc="employer.name" /></b><br />
+                                    <b> RUT <span t-esc="employer.rut" /></b><br />
+                                    <b> EMPLEADOR</b><br />
+                                </td>
+                                <td style="width:5%;text-align:center" class='letra5'>
+                                    <b> _______________________</b><br />
+                                    <b>
+                                        <t t-esc="employee.name" /></b><br />
+                                    <b> RUT
+                                        <t t-esc="employee.identification_id" /></b><br />
+                                    <b> TRABAJADOR:</b><br />
+
+                                </td>
+
+                            </tr>
+
+                        </thead>
+                    </table>
+                </div>
+
+            </t>
+        </t>
+    </template>
+</odoo>

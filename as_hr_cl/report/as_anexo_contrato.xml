@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="anexo_contrato">
+        <t t-call="web.html_container">
+            <div class="header">
+                <style type="text/css">
+                    .header {
+                        margin: 0px;
+                        padding: 0px;
+                    }
+
+                    .cabecera {
+                        font-size: 7px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .letra {
+                        font-size: 14px !important;
+                        margin: 0px;
+                    }
+
+                    .letra3 {
+                        font-size: 15px !important;
+                        margin: 0px;
+                        padding-left: 3px !important;
+                        padding-right: 3px !important;
+                    }
+
+                    .cabecera2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .columnasr {
+                        font-size: 12px;
+                        font-family: 'Arial' !important;
+                        margin-bottom: 10px;
+                    }
+
+                    .columnas2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    h3 {
+                        font-family: 'Arial' !important;
+                        font-size: 14px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    td {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    h4 {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    span {
+                        font-family: 'Arial' !important;
+
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    body {
+                        font-family: 'Arial' !important;
+                        font-size: 18px;
+                    }
+
+                    hr {
+                        border-bottom: solid;
+                        border-width: 1pt border-top:0px !important;
+                        padding: 0px !important;
+                        margin: 0px !important;
+
+                    }
+
+                    tr.border_bottom td {
+                        border-bottom: 0.5pt solid #cccccc;
+                        margin-right: 3px;
+                        padding-right: 3px;
+                        font-size: 13px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .borde1 {
+                        border-top: 1px solid grey;
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        border-bottom: 1px solid grey;
+                        margin-bottom: 3px;
+
+                    }
+
+                    .borde1 thead tr td {
+                        padding-left: 5px;
+                        padding-right: 5px;
+
+                    }
+
+                    .borde2 {
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        border-top: 1px solid grey;
+                        margin: 3px;
+                    }
+
+                    .titulo {
+                        font-size: 25px;
+                        padding-top: 40px;
+                    }
+
+                    .titulo3 {
+                        font-size: 15px;
+                        padding-top: 40px;
+                        text-align: left;
+                    }
+
+                    .titulo2 {
+                        font-size: 25px;
+                        padding: 1px;
+                    }
+
+                    .letra0 {
+                        font-size: 11px;
+                    }
+
+                    .letra2 {
+                        font-size: 5px;
+                    }
+
+                    .letra5 {
+                        text-align: right;
+                        font-size: 5px;
+                    }
+
+
+                    .cuadro {
+                        border-left: 1px solid #000000 !important;
+                        padding-left: 4px !important;
+                        border-right: 1px solid #000000 !important;
+                        padding-right: 4px !important;
+                    }
+                </style>
+                <div class="col-12" style="text-align:center;" name='as_titulo'>
+                    <h2 class='titulo'>
+                        <div>
+
+                            <b>ANEXO AL CONTRATO DE TRABAJO</b><br />
+                        </div>
+                    </h2>
+                    <br />
+                    <br />
+                </div>
+
+                <table width="100%" class="table table-borderless borde1">
+
+                </table>
+            </div>
+            <t t-call="web.internal_layout">
+
+                <div class="page">
+                    <style type="text/css">
+                        .letra2 {
+                            border: 1px solid #000000;
+                            font-size: 9px;
+                        }
+
+                        .letra3 {
+                            border: 1px solid #000000;
+                            font-size: 9px;
+                            text-align: right;
+                        }
+
+                        .letra5 {
+                            font-size: 18px;
+                            text-align: center;
+                        }
+
+                        .parrafo {
+                            font-size: 18px;
+                            text-align: justify;
+                            line-height: 25px;
+                        }
+                    </style>
+                    <div class="col-12" style="text-align:left;font-size: 18px;" name='as_titulo'>
+                        <br />
+
+                        <div class="parrafo">
+                            En <span t-esc="info['ciudad']" />, a
+                            <t t-esc="fecha_actual" />, entre el Administrador <b><span
+                                    t-esc="employer.name" /></b>,
+                            R.U.T <b>
+                                <t t-esc="employer.rut" /></b>, ubicado en
+                            <t t-esc="employer.address" /> comuna de <span t-esc="employer.comuna" />,
+                            representada legalmente por don(a) <b><span t-esc="employer.representante_name" /></b>, cédula de
+                            identidad <b><span t-esc="employer.representante_rut" /></b>, con domicilio en el mismo edificio, en
+                            adelante "el empleador" y don(a) <b>
+                                <t t-esc="employee.name" /></b>, de nacionalidad <b><span
+                                    t-esc="employee.country_of_birth.name" /></b>, cédula de identidad N° <b>
+                                <t t-esc="employee.identification_id" /></b>, fecha de nacimiento
+                            <t t-esc="fecha_nacimiento" />, de estado civil <b><span t-esc="marital" /></b>,
+                            domiciliado en <b><span t-esc="employee.address_home_id.name" /></b>, de la ciudad de <b><span
+                                    t-esc="employee.country_id.name" /></b>, en adelante “El Trabajador”, ambas partes
+                            mayores de edad, se ha convenido siguiente anexo de Contrato:
+                            <br />
+                            <br />
+                            <t t-if="contract.type_id.as_tipo == 'indefinido'">
+                                <b>PRIMERO:</b> Se extiende el Contrato a Plazo Indefinido a partir del <b><span
+                                    t-esc="fecha_inicial" /></b>.
+                                <br />
+                                <br />
+                                <b>TERCERO: </b>Las demás estipulaciones del Contrato de Trabajo se mantiene inalterables,
+                                prevaleciendo lo aquí acordado en caso de incompatibilidad.
+                                <br />
+                                <br />
+                                <b>CUARTO: </b> El presente anexo que forma parte integral del Contrato de Trabajo vigente entre
+                                el Empleador y el Trabajador, se firma en dos ejemplares de igual tenor dejando expresa
+                                constancia que en este acto el trabajador recibe uno de ellos.
+                                <br />
+                                <br />
+                            </t>
+                            <t t-if="contract.type_id.as_tipo != 'indefinido'">
+                                <b>PRIMERO:</b> Se extiende el Contrato a Plazo Fijo del <b><span
+                                    t-esc="fecha_inicial" /></b> hasta el <b><span
+                                    t-esc="fecha_final" /></b>. <br />
+                                <br />
+                                SEGUNDO: Los horarios quedan sujetos a Formulario F35-B.
+                                <br />
+                                <br />
+                                <b>TERCERO: </b>Las demás estipulaciones del Contrato de Trabajo se mantiene inalterables,
+                                prevaleciendo lo aquí acordado en caso de incompatibilidad.
+                                <br />
+                                <br />
+                                <b>CUARTO: </b> El presente anexo que forma parte integral del Contrato de Trabajo vigente
+                                entre el Empleador y el Trabajador, se firma en dos ejemplares de igual tenor
+                                dejando expresa constancia que en este acto el trabajador recibe uno de ellos.
+                                <br />
+                                <br />
+
+                            </t>
+
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                    <table width="100%" name="footer_table">
+                        <thead style='border:1px solid #FFFFFF;line-height : 25px;'>
+                            <tr>
+                                <td style="width:25%;text-align:center" class='letra5'>
+                                    <t t-if="employer.icon_image">
+                                        <img t-att-src="image_data_uri(employer.icon_image)"
+                                            style="height: 85px; width: 150px;" />
+                                    </t>
+
+                                </td>
+                                <td style="width:25%;text-align:center" class='letra5'>
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td style="width:25%;text-align:center" class='letra5'>
+                                    <b> ________________________</b><br />
+                                    <b> <span t-esc="employer.name" /></b><br />
+                                    <b> RUT <span t-esc="employer.rut" /></b><br />
+                                    <b> <span t-esc="employer.address" /></b><br />
+                                    <b> Cédula de Identidad <span t-esc="employer.representante_rut" /></b><br />
+
+                                </td>
+                                <td style="width:25%;text-align:center" class='letra5'>
+                                    <b> _______________________</b><br />
+                                    <b>
+                                        <t t-esc="employee.name" /></b><br />
+                                    <b> Cédula de Identidad 
+                                        <t t-esc="employee.identification_id" /></b><br />
+
+                                </td>
+
+                            </tr>
+
+                        </thead>
+                    </table>
+                </div>
+
+            </t>
+        </t>
+    </template>
+</odoo>

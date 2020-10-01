@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_res_partner_cl_tree_view">
+        <field name="name">Partners</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <field name="display_name" position="before">
+                <field name="document_number" />
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_res_partner_cl_filter">
+        <field name="name">Partners</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="document_number"
+                    filter_domain="['|','|',('document_number','ilike',self),('ref','=',self),('vat','ilike',self)]" />
+            </field>
+        </field>
+    </record>
+
+</odoo>
