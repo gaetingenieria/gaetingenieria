@@ -25,6 +25,8 @@ Custom module for GAET
         'views/as_account_payment.xml',
         'views/as_view_payment.xml',
         'views/report/as_sale_report_templates.xml',
+        'views/report/as_invoice_report_document.xml',
+        'views/report/as_purchaseorder_document.xml',
         'wizard/as_report_sales.xml',
         'wizard/as_report_planilla_general.xml',
         'security/ir.model.access.csv',
