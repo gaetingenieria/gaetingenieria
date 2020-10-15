@@ -171,3 +171,15 @@ class AccountInvoice(models.Model):
                 len(res),
                 group.id
             ) for group, amounts in res]
+
+class SaleAdvancePaymentInv(models.TransientModel):
+    _inherit = "sale.advance.payment.inv"
+
+    def _create_invoice(self, order, so_line, amount):
+        res = super(SaleAdvancePaymentInv,self)._create_invoice(order, so_line, amount)
+        order.as_cont_invoice = order.as_cont_invoice + 1
+        if order.as_cont_invoice:
+            res.write({'as_cont_invoice':order.as_cont_invoice})
+        if order.as_retencion:
+            res.write({'as_retencion':order.as_retencion.id})
+        return res

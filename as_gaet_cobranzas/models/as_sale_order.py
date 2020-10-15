@@ -19,12 +19,12 @@ class SaleOrder(models.Model):
     as_numeracion_interna = fields.Char('Numeracion Interna', help=u'Numeración interna de ventas confirmadas.', copy=False)
     as_type_retencion = fields.Selection(selection=[('before', 'Antes de Retencion'),('after', 'Despues de Retencion')], string='Calculo de IVA',default="before")
 
-    def _prepare_invoice(self):
-        invoice_vals = super(SaleOrder, self)._prepare_invoice()
-        self.as_cont_invoice = self.as_cont_invoice + 1
-        invoice_vals['as_cont_invoice'] = self.as_cont_invoice
-        invoice_vals['as_retencion'] = self.as_retencion
-        return invoice_vals
+    # def _prepare_invoice(self):
+    #     invoice_vals = super(SaleOrder, self)._prepare_invoice()
+    #     self.as_cont_invoice = self.as_cont_invoice + 1
+    #     invoice_vals['as_cont_invoice'] = self.as_cont_invoice
+    #     invoice_vals['as_retencion'] = self.as_retencion
+    #     return invoice_vals
 
     def action_confirm(self):
         result = super(SaleOrder,self).action_confirm()
